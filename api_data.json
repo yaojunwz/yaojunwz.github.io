@@ -446,6 +446,17 @@
         "Parameter": [
           {
             "group": "Parameter",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "1"
+            ],
+            "optional": false,
+            "field": "plt",
+            "description": "<p>手机端系统[0:安卓,1:IOS]</p>"
+          },
+          {
+            "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "dev",
@@ -456,7 +467,7 @@
             "type": "String",
             "optional": false,
             "field": "alarmId",
-            "description": "<p>报警</p>"
+            "description": "<p>报警 （上传UUID）</p>"
           },
           {
             "group": "Parameter",
