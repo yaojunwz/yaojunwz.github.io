@@ -961,6 +961,67 @@ define({ "api": [
   },
   {
     "type": "GET",
+    "url": "apis/v1.1/phone/summary/tripList/summary/month/user",
+    "title": "获得某用户所有的设备的当月的行程统计",
+    "name": "tripListSummaryMonthUser",
+    "group": "phone",
+    "version": "1.0.1",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "uid",
+            "description": "<p>设备的唯一编码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "stm",
+            "description": "<p>统计开始时间</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "allowedValues": [
+              "0",
+              "40000"
+            ],
+            "optional": false,
+            "field": "errcode",
+            "description": "<p>错误码[0:成功,1:错误]</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>错误信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "JsonArray",
+            "optional": false,
+            "field": "result",
+            "description": "<p>[ { &quot;dev&quot;: &quot;ADAS201805130002&quot;, &quot;sroce&quot;: 0, &quot;tripCount&quot;: 0, &quot;alarmMap&quot;: {}, &quot;alarmList&quot;: [], &quot;Triptime&quot;: 0, &quot;TripDistance&quot;: 0 } ]</p>"
+          }
+        ]
+      }
+    },
+    "filename": "src/jtb_data_web/controllerV1_1.py",
+    "groupTitle": "phone"
+  },
+  {
+    "type": "GET",
     "url": "apis/v1/phone/summary/tripList/summary/multipleDays",
     "title": "获得设备的某段时间的行程统计",
     "name": "tripListSummaryMultipleDays",
@@ -1206,7 +1267,7 @@ define({ "api": [
     "title": "获得所有报警信息",
     "name": "alarmList",
     "group": "web",
-    "version": "0.1.0",
+    "version": "1.0.1",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1370,8 +1431,8 @@ define({ "api": [
     "title": "获得所有车辆提示信息",
     "name": "carTipList",
     "group": "web",
-    "version": "0.1.0",
-    "filename": "src/jtb_data_web/controller.py",
+    "version": "1.0.1",
+    "filename": "src/jtb_data_web/controllerV1_1.py",
     "groupTitle": "web"
   },
   {
@@ -1381,7 +1442,7 @@ define({ "api": [
     "name": "carTipList",
     "group": "web",
     "version": "0.1.0",
-    "filename": "src/jtb_data_web/controllerV1_1.py",
+    "filename": "src/jtb_data_web/controller.py",
     "groupTitle": "web"
   },
   {
